@@ -1,9 +1,9 @@
-![image](https://github.com/user-attachments/assets/6f9ef600-a9fb-41f1-9243-afb109ac4e9b)
+
+  ![furrever-home-high-resolution-logo-transparent](https://github.com/user-attachments/assets/81a05913-14f6-43b7-9889-5e9715d13c59)
 
   
   
-  
-  Furrever Home is a user-friendly website that gathers data on pets available for
+Furrever Home is a user-friendly website that gathers data on pets available for
 adoption from n animal shelters in the Orlando area and creates a centralized page for
 users to browse this information (n is a number still to be determined). The purpose of
 this website is to provide a streamlined experience for matching cats and dogs available
