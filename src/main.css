@@ -143,6 +143,7 @@ main {
 }
 
 .form__text {
+    font-size: medium;
     padding: 5px;
     text-align: center;
 }
