@@ -38,6 +38,7 @@ function createPasswordRequirements() {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    const forgotPasswordForm = document.querySelector("#forgotPassword");
     const passwordInput = createAccountForm.querySelector("#enterPassword");
     
     // Create and append password requirements
@@ -65,6 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
+
+    })
+
+    document.querySelector('#linkForgotPassword').addEventListener("click", e => {
+        e.preventDefault();
+        loginForm.classList.add("form--hidden");
+        forgotPasswordForm.classList.remove("form--hidden");
 
     })
 
