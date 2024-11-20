@@ -1,74 +1,95 @@
-body {
-    font-family: 'Quicksand', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.navbar {
+.hero {
+    background-image: url('path/to/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
-    background-color: #f8f9fa;
-}
-
-.logo a {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #333;
-}
-
-h1 {
     text-align: center;
-    margin: 2rem 0;
+    color: white;
+    padding: 100px;
 }
 
-#shelter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between cards */
-}
-
-.shelter-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden; /* Ensures no overflow */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.shelter-image {
-    width: 100%; /* Make image fill the card */
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Cover the area without distortion */
-}
-
-.shelter-info {
-    padding: 15px;
-}
-
-.shelter-name {
-    font-size: 1.2em;
+.hero h1 {
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
-.shelter-address, .shelter-phone {
-    font-size: 0.9em;
-    margin-bottom: 5px;
+.hero p {
+    font-size: 1.2rem;
 }
 
-.shelter-website {
+.shelter-gallery {
+    padding: 40px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.shelter-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.shelter-gallery-item {
+    width: 40%;
+    margin: 0 20px;
+    border: 8px solid #fff; /* White border for frame effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+.shelter-gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.shelter-gallery-item img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover;
+    display: block; /* Removes any extra space below the image */
+}
+
+.shelter-item:hover {
+    transform: translateY(-5px);
+}
+
+.shelter-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.shelter-info {
+    padding: 20px;
+}
+
+.shelter-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff; /* Button color */
-    color: white; /* Button text color */
-    text-decoration: none; /* No underline */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }
