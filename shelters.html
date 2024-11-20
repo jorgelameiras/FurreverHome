@@ -1,18 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Pet Shelters - Furrever Home</title>
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/shelters.css">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@474&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="index.html">Furrever Home</a></h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Shelters Information</title>
-        <link rel="stylesheet" href="./src/main.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-    </head>
-    <body>
-        <h1 class="title">SHELTERS INFO HERE </h1>
-    </body>
+    <main class="container">
+        <h1>Local Pet Shelters</h1>
+        <!-- Gallery Start -->
+        <section class="shelter-gallery">
+            <div class="gallery-container">
+                <div class="shelter-gallery-item">
+                    <img src="./src/petrescueshelter.png" alt="Shelter1">
+                </div>
+                <div class="shelter-gallery-item">
+                    <img src="./src/secondchanceshelter.jpg" alt="Shelter2">
+                </div>
+                <div class="shelter-gallery-item">
+                    <img src="./src/orangecountyshelter.png" alt="Shelter3">
+                </div>
+            </div>
+        </section>
+    <!-- Gallery End -->
+    </main>
 
+    <footer>
+        <p>&copy; 2024 Furrever Home. All rights reserved.</p>
+    </footer>
 
-
+    <script src="./src/shelters.js"></script>
+</body>
 </html>

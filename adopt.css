@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Header Styling */
@@ -25,14 +26,14 @@ header {
 
 .logo a {
     font-family: 'Pacifico', cursive;
-    font-size: 1.8em;
-    color: #333;
+    font-size: 36px;
+    color: black;
     text-decoration: none;
 }
 
 .navbar .login-btn {
     background-color: #ff6b6b !important;
-    color: white !important;
+    color: black!important;
     padding: 8px 16px;
     border-radius: 5px;
     text-decoration: none;
@@ -57,7 +58,7 @@ header {
 .login-btn {
     padding: 8px 16px;
     background-color: #ff6b6b;
-    color: white;
+    color: black;
     border-radius: 5px;
     text-decoration: none;
 }

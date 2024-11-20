@@ -1,0 +1,74 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.logo a {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#shelter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+}
+
+.shelter-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures no overflow */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.shelter-image {
+    width: 100%; /* Make image fill the card */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.shelter-info {
+    padding: 15px;
+}
+
+.shelter-name {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.shelter-address, .shelter-phone {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.shelter-website {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    text-decoration: none; /* No underline */
+}
