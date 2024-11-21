@@ -1,18 +1,102 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Pet Shelters - Furrever Home</title>
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/shelter.css">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@474&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo"><a href="index.html">Furrever Home</a></h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Shelters Information</title>
-        <link rel="stylesheet" href="./src/main.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-    </head>
-    <body>
-        <h1 class="title">SHELTERS INFO HERE </h1>
-    </body>
+    <main class="container">
+        <div class="shelter-header">
+            <h1>Animal Shelters near Orlando, FL</h1>
+            <p class="header-description">At Furrever Home, we share your passion for pets. Together, we can make a bigger difference.</p>
+            
+            <div class="search-section">
+                <div class="search-box">
+                    <label>ZIP Code, City or Organization Name</label>
+                    <input type="text" placeholder="Orlando, FL">
+                </div>
+                <div class="sort-box">
+                    <label>Sort By</label>
+                    <select>
+                        <option>Nearest</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+        </div>
 
+        <div class="shelter-content">
+            <aside class="filter-sidebar">
+                <h2>Filter by</h2>
+                <div class="filter-section">
+                    <h3>Pets Available</h3>
+                    <label><input type="checkbox"> Dogs to Adopt</label>
+                    <label><input type="checkbox"> Cats to Adopt</label>
+                </div>
+                <div class="filter-section">
+                    <h3>Organization</h3>
+                    <label><input type="checkbox"> Shelter</label>
+                    <label><input type="checkbox"> Rescue</label>
+                    <label><input type="checkbox"> Foster</label>
+                    <label><input type="checkbox"> Other</label>
+                </div>
+            </aside>
+    
+        </div>
 
+        <section class="shelter-gallery">
+            <div class="gallery-grid">
+                <div class="shelter-card">
+                    <img src="./src/petrescueshelter.png" alt="Pet Rescue Shelter" class="shelter-image">
+                    <div class="shelter-info">
+                        <h3>Pet Rescue Shelter</h3>
+                        <p>123 Main St, Orlando, FL</p>
+                        <p>(123) 456-7890</p>
+                        <a href="https://www.petrescuebyjudy.com/" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="shelter-card">
+                    <img src="./src/secondchanceshelter.jpg" alt="Second Chance Shelter" class="shelter-image">
+                    <div class="shelter-info">
+                        <h3>Second Chance Shelter</h3>
+                        <p>456 Oak Ave, Orlando, FL</p>
+                        <p>(987) 654-3210</p>
+                        <a href="https://www.secondchanceanimalrescueandsanctuary.org/" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="shelter-card">
+                    <img src="./src/orangecountyshelter.png" alt="Orange County Shelter" class="shelter-image">
+                    <div class="shelter-info">
+                        <h3>Orange County Shelter</h3>
+                        <p>789 Pine Rd, Orlando, FL</p>
+                        <p>(321) 555-1234</p>
+                        <a href="https://www.ocnetpets.com/Adopt/AnimalsinShelter.aspx" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </main>
 
+    <footer>
+        <p>&copy; 2024 Furrever Home. All rights reserved.</p>
+    </footer>
+</body>
 </html>
