@@ -1,26 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Croissant One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /* Base styles */
 body {
+    --border-radius: 4px;
     font-family: 'Quicksand', sans-serif;
-    line-height: 1.6;
+    font-weight: 400;
     margin: 0;
-    padding: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    font-size: 18px;
+    padding-top: 65px;
+    background-image: url(/src/shelterimg.png);
+    background-size: cover;
 }
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 50px 20px;
 }
 
 /* Navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #f8f9fa;
-}
-
 .logo {
     position: absolute;
     left: 50%;
@@ -29,11 +40,68 @@ body {
 }
 
 .logo a {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     color: black;
     text-decoration: none;
     font-size: 36px; 
 }
+
+.login-btn {
+    padding: 50px 50px;
+    font-family: serif;
+    color: black;
+    background: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+   
+}
+
+
+.login-btn:hover {
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav-links a{
+    
+    font-family: serif;
+    color: black;
+    background: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.navbar a {
+    
+    padding: 10px 0;
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s;
+}
+
+.navbar nav:hover, a:hover {
+    cursor: url('./paw.png'), pointer !important;
+    color: #000;
+}
+
 
 /* Header Section */
 .shelter-header {
@@ -50,9 +118,9 @@ body {
 
 .shelter-header h1 {
     text-align: center;
-    margin: 0 auto 20px; /* changed margin */
+    margin: 0 auto 20px;
     font-size: 2.5rem;
-    width: 100%; /* add this */
+    width: 100%; 
 }
 
 .header-description {
@@ -61,7 +129,7 @@ body {
     margin: 0 auto 30px;
     line-height: 1.6;
     color: #333;
-    padding: 0 20px; /* add this */
+    padding: 0 20px;
 }
 
 .header-image img {
@@ -75,6 +143,8 @@ body {
 }
 
 .header-content h1 {
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -83,19 +153,36 @@ body {
 .search-section {
     display: flex;
     gap: 20px;
+    margin-bottom: 30px;
+    max-width: 800px;
     margin: 20px auto;
-    max-width: 800px; 
 }
 
-.search-box, .sort-box {
+.search-box {
+    flex: 2;
+}
+
+.sort-box {
     flex: 1;
 }
 
-.search-box input, .sort-box select {
+#searchInput, #sortSelect {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#sortSelect {
+    cursor: pointer;
+    background-color: white;
+}
+
+#searchInput:focus, #sortSelect:focus {
+    outline: none;
+    border-color: #6495ED;
+    box-shadow: 0 0 5px rgba(100, 149, 237, 0.3);
 }
 
 /* Main Content Layout */
@@ -108,61 +195,6 @@ body {
 .shelter-content {
     display: flex;
     gap: 30px;
-}
-
-/* Filter Sidebar */
-.filter-sidebar {
-    width: 250px;
-    padding: 20px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-.filter-sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.filter-section {
-    margin-bottom: 30px;
-}
-
-.filter-section h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.filter-section label {
-    display: block;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.filter-section input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.shelter-content {
-    flex: 1;
-}
-
-.results-count {
-    margin-bottom: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Results Section */
-.shelter-results {
-    flex: 1;
-}
-
-.results-count {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
 }
 
 /* Shelter Cards */
@@ -197,6 +229,8 @@ body {
 }
 
 .shelter-info h3 {
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     margin: 0 0 10px 0;
     color: #333;
 }
@@ -215,4 +249,17 @@ body {
 
 .learn-more:hover {
     text-decoration: underline;
+}
+
+footer {
+    
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    color: #333;
+
 }

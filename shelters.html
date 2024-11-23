@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Pet Shelters - Furrever Home</title>
-    <link rel="stylesheet" href="./src/main.css">
-    <link rel="stylesheet" href="./src/shelter.css">
-    <link rel="shortcut icon" href="/assets/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@474&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <h2 class="logo"><a href="index.html">Furrever Home</a></h2>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="adopt.html">Adopt</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Furrever Home</title>
+        <link rel="stylesheet" href="./src/main.css">
+        <link rel="stylesheet" href="./src/shelter.css">
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body>  
+        <!-- Header Start -->
+        <header>
+            <nav class="navbar container flex">
+                <h2 class="logo"><a href="./index.html">Furrever Home</a></h2>
+                    <ul class="nav-links flex">
+                    <li><a href="./adopt.html">Adopt</a></li>
+                    <li><a href="./index.html#about">About Us</a></li>
+                    <li><a href="./index.html#contact">Contact Us</a></li>
+                    <li><a href="./shelters.html">Shelters</a></li>
+                </ul>
+                <a href="./login.html" class="login-btn flex">login</a>
+            </nav>
+        </header>
+        <!-- Header End -->
 
     <main class="container">
         <div class="shelter-header">
@@ -29,37 +34,15 @@
             
             <div class="search-section">
                 <div class="search-box">
-                    <label>ZIP Code, City or Organization Name</label>
-                    <input type="text" placeholder="Orlando, FL">
+                    <input type="text" id="searchInput" placeholder="Search by shelter name or location...">
                 </div>
                 <div class="sort-box">
-                    <label>Sort By</label>
-                    <select>
-                        <option>Nearest</option>
-                        <!-- Add more options as needed -->
+                    <select id="sortSelect">
+                        <option value="name">Sort by Name</option>
+                        <option value="distance">Sort by Distance</option>
                     </select>
                 </div>
             </div>
-        </div>
-
-        <div class="shelter-content">
-            <aside class="filter-sidebar">
-                <h2>Filter by</h2>
-                <div class="filter-section">
-                    <h3>Pets Available</h3>
-                    <label><input type="checkbox"> Dogs to Adopt</label>
-                    <label><input type="checkbox"> Cats to Adopt</label>
-                </div>
-                <div class="filter-section">
-                    <h3>Organization</h3>
-                    <label><input type="checkbox"> Shelter</label>
-                    <label><input type="checkbox"> Rescue</label>
-                    <label><input type="checkbox"> Foster</label>
-                    <label><input type="checkbox"> Other</label>
-                </div>
-            </aside>
-    
-        </div>
 
         <section class="shelter-gallery">
             <div class="gallery-grid">
