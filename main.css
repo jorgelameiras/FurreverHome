@@ -6,6 +6,12 @@
     font-family: "Poppins", sans-serif;
 }
 
+@font-face {
+    font-family: "Pacifico", cursive;
+    font-style: normal;
+    src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
     --color-primary: #6495ED;
