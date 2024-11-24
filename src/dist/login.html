@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login / Sign Up Form</title>
+    <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+    <link rel="stylesheet" href="/adopt.e5980c4e.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@474&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+    <!--Log in Starts-->
+        <form action="" class="form" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus="" placeholder="Username or email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="loginPassword" autofocus="" placeholder="Password">
+                <div class="form__input-error-message"></div>
+                <button type="button" class="password-toggle" data-target="loginPassword">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a id="linkForgotPassword" href="/login.html" class="form__link">Forgot your password?</a>    <!--Remember to add a new page to the "#" when people need to update thier password-->
+            </p>
+            <p class="form__text">
+                <a id="linkCreateAccount" href="/login.html" class="form__link">Don't have account? Create account</a>
+            </p>
+        </form> 
+    <!--Log in Ends-->
+
+    <!--Sign up Starts-->
+        <form action="" class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Create Account</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signupUsername" class="form__input" autofocus="" placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="email" id="emailAddress" class="form__input" autofocus="" placeholder="Email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" id="enterPassword" class="form__input" autofocus="" placeholder="Password">
+                <div class="form__input-error-message"></div>
+                <button type="button" class="password-toggle" data-target="enterPassword">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <div class="form__input-group">
+                <input type="password" id="confirmPassword" class="form__input" autofocus="" placeholder="Confirm Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a id="linkLogin" href="/login.html" class="form__link">Already have an account? Sign in</a>
+            </p>
+        </form> 
+    <!--Sign up Ends-->
+
+    <!-- Forgot Password Starts -->
+
+        <form action="" class="form form--hidden" id="forgotPassword">
+            <h1 class="form__title">Forgot Password</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="email" id="recoveryEmail" class="form__input" autofocus="" placeholder="Email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+        </form>
+
+        
+    <!-- Forgot Password Ends -->
+
+    </div>
+    <script src="/login.c4775257.js"></script>
+<script src="/login.3249096d.js"></script></body>
