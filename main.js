@@ -151,4 +151,61 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const pets = [
+            { id: 1, name: "Pet 1", image: "./src/sample_data/pet1.png", type: "dog", age: "puppy", gender: "male" },
+            { id: 2, name: "Pet 2", image: "./src/sample_data/pet2.png", type: "cat", age: "adult", gender: "female" },
+            { id: 3, name: "Pet 3", image: "./src/sample_data/pet3.png", type: "dog", age: "adult", gender: "male" },
+            { id: 4, name: "Pet 4", image: "./src/sample_data/pet4.png", type: "cat", age: "kitten", gender: "female" },
+            { id: 5, name: "Pet 5", image: "./src/sample_data/pet5.png", type: "dog", age: "puppy", gender: "female" },
+            { id: 6, name: "Pet 6", image: "./src/sample_data/pet6.png", type: "cat", age: "adult", gender: "male" }
+        ];
+    
+        const petGrid = document.getElementById("pet-grid");
+    
+        function displayPets(petsToDisplay) {
+            petGrid.innerHTML = ''; // Clear existing pets
+            petsToDisplay.forEach(pet => {
+                const petCard = document.createElement("div");
+                petCard.classList.add("col-lg-4", "col-md-6", "mb-4");
+    
+                petCard.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${pet.image}" class="card-img-top" alt="${pet.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${pet.name}</h5>
+                            <p class="card-text">This is ${pet.name}. Click "Adopt" to learn more about adopting this pet.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary btn-block">Adopt</a>
+                        </div>
+                    </div>
+                `;
+    
+                petGrid.appendChild(petCard);
+            });
+        }
+    
+        function applyFilters() {
+            const typeFilter = document.getElementById('pet-type').value;
+            const ageFilter = document.getElementById('pet-age').value;
+            const genderFilter = document.getElementById('pet-gender').value;
+    
+            const filteredPets = pets.filter(pet => {
+                return (typeFilter === '' || pet.type === typeFilter) &&
+                       (ageFilter === '' || pet.age === ageFilter) &&
+                       (genderFilter === '' || pet.gender === genderFilter);
+            });
+    
+            displayPets(filteredPets);
+        }
+    
+        // Initial display of all pets
+        displayPets(pets);
+    
+        // Add event listener to the filter button
+        document.querySelector('.btn-primary').addEventListener('click', applyFilters);
+    });
+    
 });
