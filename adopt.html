@@ -3,38 +3,43 @@
     <head> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Furrever Home</title>
-        <link rel="stylesheet" href="./src/main.css">
-        <link rel="shortcut icon" href="/assets/favicon.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>Adopt a Pet - Furrever Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./adopt.css">
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@474&display=swap" rel="stylesheet">
+        <link href='https://kit.fontawesome.com/a076d05399.js'</link>
     </head>
-    <body>  
-        <!-- Header Start -->
-        <header>
-            <nav class="navbar container flex">
-                <h2 class="logo"><a href="#">Furrever Home</a></h2>
-                    <ul class="nav-links flex">
-                    <li><a href="./adopt.html">Adopt</a></li>
-                    <li><a href="./index.html#about">About Us</a></li>
-                    <li><a href="./index.html#contact">Contact Us</a></li>
-                    <li><a href="./shelters.html">Shelters</a></li>
-                </ul>
-                <a href="./login.html" class="login-btn flex">login</a>
-            </nav>
-        </header>
-        <!-- Header End -->
-    <div class="browse-gallery">
-        <main class="container mt-5 pt-5">
-            <section class="adopt-page text-left">
-                <button class="btn btn-info mb-4">Filter Pets</button>
-                <button href="./favorites.html" class="right-link">Animal Favorites</button>
-                <div id="pet-grid" class="row justify-content-center">
-                    <!-- Cards will be dynamically added here -->
-                </div>
-            </section>
-        </main>
-    </div>    
+<body>
+    <!-- Original Header Start -->
+    <header>
+        <nav class="navbar container flex">
+            <h2 class="logo"><a href="#">Furrever Home</a></h2>
+            <ul class="nav-links flex">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html#about">About Us</a></li>
+                <li><a href="./index.html#contact">Contact Us</a></li>
+                <li><a href="./shelters.html">Shelters</a></li>
+            </ul>
+            <div class="right-links flex">
+                <i class='far fa-user-circle' style='font-size:48px;'></i>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Original Header End -->
+    <main class="container mt-5 pt-5">
+        <section class="adopt-page text-left">
+            <button class="btn btn-info mb-4">Filter Pets</button>
+            <button href="./favorites.html" class="right-link">Animal Favorites</button>
+            <div id="pet-grid" class="row justify-content-center">
+                <!-- Cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./adopt.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
 </html>
