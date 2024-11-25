@@ -23,7 +23,7 @@ model Adopter {
 model Pet {
   id            Int      @id @default(autoincrement())
   name          String
-  imageLink     String
+  imageLink     String[]
   gender        String
   age           Int
   size          String
