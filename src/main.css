@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
     --color-primary: #6495ED;
     --color-primary-dark: #073180;
     --color-secondary: #0000FF;
@@ -173,6 +174,8 @@ main {
 }
 
 .password-requirements h3 {
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     color: var(--color-primary);
     margin-top: 0;
     font-size: 0.9em;
@@ -207,7 +210,7 @@ main {
 
 /* Index styling*/
 header{
-    position:fixed;
+    position: fixed;
     top:0;
     left:0;
     width:100%;
@@ -236,7 +239,8 @@ header{
 }
 
 .logo a {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     color: black;
     text-decoration: none;
     font-size: 36px; 
@@ -244,11 +248,13 @@ header{
 
 .login-btn {
     padding: 50px 50px;
-    text-decoration: underline;
+    font-family: serif;
     color: black;
+    background: white;
+    font-size: 18px;
     text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
+   
 }
 
 
@@ -270,9 +276,18 @@ header{
     margin-right: auto;
 }
 
+.nav-links a{
+    
+    font-family: serif;
+    color: black;
+    background: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
 .navbar a {
-    font-family: cursive;
-    font-style: normal;
+    
     padding: 10px 0;
     display: inline-block;
     color: black;
@@ -324,7 +339,7 @@ header{
 }
 
 .homepage a {
-    font-family: cursive;
+    font-family: serif;
     color: black;
     background: white;
     padding: 10px 30px;
@@ -360,7 +375,8 @@ header{
 }
 
 .cell-container h1 {
-    font-family: cursive;
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     color: black;
 }
 
@@ -421,7 +437,8 @@ header{
 }
 
 .about h2 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     color:#000;
     text-align: top;
     margin: 30px 0 10px;
@@ -512,6 +529,8 @@ header{
 }
 
 .about .card-back h3 {
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     font-size: 0.8em;
     color: black;
     margin-bottom: 10px;
@@ -534,6 +553,8 @@ header{
 }
 
 .contact-container h2 {
+    font-family: 'Croissant One', serif;
+    font-weight: 400;
     margin-bottom: 20px;
     color: black;
 }
