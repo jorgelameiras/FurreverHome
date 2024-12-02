@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -27,30 +21,30 @@ model Pet {
   gender        String
   age           Int
   size          String
-  Adopter       Adopter? @relation(fields: [adopterId], references: [id])
   adopterId     Int?
   description   String
   dateOfArrival String
   species       String
-  Shelter       Shelter? @relation(fields: [shelterId], references: [id])
   shelterId     Int?
+  Adopter       Adopter? @relation(fields: [adopterId], references: [id])
+  Shelter       Shelter? @relation(fields: [shelterId], references: [id])
 }
 
 model Shelter {
-  id   Int    @id @default(autoincrement())
-  name String
-  phoneNumer String
-  address String
-  description String
-  logoLink String
-  websiteLink String
+  id               Int    @id @default(autoincrement())
+  name             String
+  phoneNumer       String
+  address          String
+  description      String
+  logoLink         String
+  websiteLink      String
   hoursOfOperation String
-  Pets Pet[]
+  Pets             Pet[]
 }
 
-model Admin{
-  id   Int    @id @default(autoincrement())
-  name String
-  email String @unique
+model Admin {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
   password String @default("password")
 }
