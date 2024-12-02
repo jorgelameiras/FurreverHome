@@ -37,7 +37,7 @@ main {
 
 .login-page {
     cursor: pointer;
-    background: url(./background4.jpg) center center no-repeat;
+    background: url(./images/background4.jpg) center center no-repeat;
     
 }
 
@@ -216,7 +216,7 @@ header{
     width:100%;
     background: white;
     z-index: 100;
-    cursor: url('./paw.png'), pointer !important;
+    cursor: url('./images/paw.png'), pointer !important;
 }
 
 .flex{
@@ -297,7 +297,7 @@ header{
 }
 
 .navbar nav:hover, a:hover {
-    cursor: url('./paw.png'), pointer !important;
+    cursor: url('./images/paw.png'), pointer !important;
     color: #000;
 }
 
@@ -310,7 +310,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/src/background3.png");
+    background: url("./images/background3.png");
     background-position: center;
     background-size: cover;
 }
@@ -361,7 +361,7 @@ header{
     width: 100%;
     padding: 10px 0;
     background-color: white;
-    background-image: url(./Paws.png);
+    background-image: url(./images/Paws.png);
     background-size: cover;
     
 }

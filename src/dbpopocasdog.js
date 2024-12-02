@@ -6,7 +6,7 @@ const fs = require('fs');
 async function main() {
   try {
     // Read the JSON file
-    const data = fs.readFileSync('ocas-dogs-url.json', 'utf-8');
+    const data = fs.readFileSync('full-compile.json', 'utf-8');
     const pets = JSON.parse(data);
 
     // Iterate over the data and add it to the database
@@ -22,8 +22,9 @@ async function main() {
           age: pet.age,
           gender: pet.gender,
           size: pet.size,
-          description: "N/A",
+          description: pet.description,
           dateOfArrival: "N/A",
+          shelter: pet.Shelter,
         },
       });
       console.log('Inserted:', createdPet);

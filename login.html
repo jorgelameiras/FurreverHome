@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Login / Sign Up Form</title>
     <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./src/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@474&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             <h1 class="form__title">Login</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <input type="text" class="form__input" id="loginEmail" autofocus placeholder="Email">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
@@ -38,20 +38,16 @@
         </form> 
     <!--Log in Ends-->
 
-    <!--Sign up Starts-->
+    <!--Sign up/Registration Starts-->
         <form action="" class="form form--hidden" id="createAccount">
             <h1 class="form__title">Create Account</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
+                <input type="email" id="regEmail" class="form__input" autofocus placeholder="Email">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
-                <input type="email" id="emailAddress" class="form__input" autofocus placeholder="Email">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" id="enterPassword" class="form__input" autofocus placeholder="Password">
+                <input type="password" id="regPassword" class="form__input" autofocus placeholder="Password">
                 <div class="form__input-error-message"></div>
                 <button type="button" class="password-toggle" data-target="enterPassword">
                     <i class="fas fa-eye"></i>
@@ -77,12 +73,12 @@
                 <input type="email" id="recoveryEmail" class="form__input" autofocus placeholder="Email">
                 <div class="form__input-error-message"></div>
             </div>
-            <button class="form__button" type="submit" >Continue</button>
+            <button class="form__button" type="submit">Continue</button>
         </form>
 
         
     <!-- Forgot Password Ends -->
 
     </div>
-    <script src="./main.js"></script>
+    <script src="./src/login.js"></script>
 </body>
