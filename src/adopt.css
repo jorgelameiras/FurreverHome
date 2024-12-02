@@ -304,3 +304,76 @@ header {
     margin-top: 1px;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
+ 
+/* pagination */
+.pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-controls button {
+    padding: 8px 15px;
+    font-family: 'Croissant One', serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6495ED;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+    background-color: #4169E1;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.footer-nav li {
+    font-size: 16px;
+}
+
+.footer-nav li a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.footer-nav li a:hover {
+    color: #666;
+}
+
+/* spacing */
+.space {
+    padding: 10px;
+}
