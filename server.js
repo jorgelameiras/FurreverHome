@@ -1,49 +1,84 @@
+// Import required modules
+const express = require('express');
+const { PrismaClient } = require('@prisma/client');
+const cors = require('cors');
+
+// Initialize the app and Prisma client
+const app = express();
+const prisma = new PrismaClient();
+
+// Middleware
+app.use(cors()); 
+app.use(express.json());
+
+async function testPrismaQuery() {
+  try {
+    const result = await prisma.Pet.findMany({
+      where: {
+        species: {
+          notIn: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
+        },
+      },
+    });
+    console.log('Test Query Result:', result);
+  } catch (error) {
+    console.error('Prisma Test Query Error:', error.message);
+  }
+}
+
+// Call the test function
+testPrismaQuery();
+
+
+// Route to fetch pets
 app.get('/pets', async (req, res) => {
   try {
-      const { type, age, gender, size } = req.query;
+    const { type, age, gender, size } = req.query;
 
-      // Build dynamic filters for Prisma query
-      const filters = {};
+    // Initialize filters object
+    const filters = {};
 
-      // Match species: "cat" maps to "DOMESTIC SH", else assume "dog"
-      if (type) {
-          if (type.toLowerCase() === 'cat') {
-              filters.species = { equals: 'DOMESTIC SH', mode: 'insensitive' };
-          } else if (type.toLowerCase() === 'dog') {
-              filters.species = { not: 'DOMESTIC SH', mode: 'insensitive' };
-          }
-      }
+    // Add type-specific filtering
+    if (type === 'dog') {
+      filters.species = {
+        notIn: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
+      };
+    } else if (type === 'cat') {
+      filters.species = {
+        in: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
+      };
+    }
 
-      // Match age: exact value or "4+" for gte: 4
-      if (age) {
-          if (age === '4+') {
-              filters.age = { gte: 4 }; // Greater than or equal to 4
-          } else {
-              filters.age = parseInt(age, 10); // Convert age to integer
-          }
-      }
+    // Add additional filters if provided
+    if (age) {
+      filters.age = parseInt(age, 10);
+    }
+    if (gender) {
+      filters.gender = gender;
+    }
+    if (size) {
+      filters.size = size.toUpperCase();
+    }
 
-      // Match gender: Capitalized values ("Male", "Female")
-      if (gender) {
-          filters.gender = gender.charAt(0).toUpperCase() + gender.slice(1).toLowerCase();
-      }
+    console.log('Filters applied:', filters); // Debugging log
 
-      // Match size: Uppercase values ("SMALL", "MED", "LARGE")
-      if (size) {
-          filters.size = size.toUpperCase();
-      }
+    // Query database
+    const pets = await prisma.Pet.findMany({
+      where: filters,
+    });
 
-      // Log filters for debugging
-      console.log('Filters:', filters);
-
-      // Fetch pets based on filters; fetch all if no filters provided
-      const pets = await prisma.pet.findMany({
-          where: Object.keys(filters).length ? filters : undefined,
-      });
-
-      res.json(pets);
+    res.json(pets);
   } catch (error) {
-      console.error('Error fetching pets:', error);
-      res.status(500).send('Error fetching pets');
+    console.error('Error fetching pets:', error); // Log the error
+    res.status(500).json({ error: 'Error fetching pets.' });
   }
+});
+
+
+
+// Start the server
+
+const PORT = 5500;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

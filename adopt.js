@@ -1,24 +1,32 @@
-// Function to fetch pets
+// Function to fetch pets with filters
 async function fetchPets(filters = {}) {
     try {
-        // Build query parameters from filters
         const queryParams = new URLSearchParams(filters).toString();
+        console.log('Query parameters:', queryParams); // Debugging
         const response = await fetch(`http://localhost:5500/pets?${queryParams}`);
         const pets = await response.json();
+        console.log('Pets received from server:', pets); // Debugging
 
         const petGrid = document.getElementById("pet-grid");
         petGrid.innerHTML = '';
 
-        // Render each pet card
         pets.forEach((pet) => {
+            if (!pet.name || pet.name.trim() === '') {
+                return;
+            }
+
             const petCard = document.createElement("div");
             petCard.classList.add("card");
+
+            // Display pet details: age and gender
+            const ageText = pet.age ? `${pet.age}` : "Age not available";
 
             petCard.innerHTML = `
                 <img src="${pet.imageLink[0]}" alt="${pet.name}" class="card-img">
                 <div class="card-content">
                     <h5 class="card-title">${pet.name}</h5>
-                    <p class="card-text">Age: ${pet.age}, Gender: ${pet.gender}, Size: ${pet.size}</p>
+                    <strong>Age:</strong> ${ageText}
+                    <strong>Gender:</strong> ${pet.gender}
                 </div>
                 <div class="card-footer">
                     <a href="#" class="learn-more">Learn More</a>
@@ -45,8 +53,6 @@ document.getElementById("apply-filters").addEventListener("click", () => {
         gender: gender !== "all" ? gender : "",
         size: size !== "all" ? size : "",
     };
-
-    console.log("Filters being sent:", filters);
 
     // Fetch pets with the selected filters
     fetchPets(filters);
