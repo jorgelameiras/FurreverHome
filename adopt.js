@@ -32,6 +32,9 @@ function updatePetGrid(pets) {
     }
 
     pets.forEach((pet) => {
+        // Skip pets with null or empty `imageLink`
+        if (!pet.imageLink || pet.imageLink.length === 0) return;
+
         if (!pet.name || pet.name.trim() === '') return;
 
         const petCard = document.createElement("div");
@@ -48,16 +51,55 @@ function updatePetGrid(pets) {
             <img src="${pet.imageLink[0]}" alt="${pet.name}" class="card-img">
             <div class="card-content">
                 <h5 class="card-title">${pet.name}</h5>
-                <strong>Age:</strong> ${pet.age || "N/A"}<br>
-                <strong>Gender:</strong> ${pet.gender || "N/A"}
-            </div>
-            <div class="card-footer">
-                <a href="#" class="learn-more">Learn More</a>
+                <div class="extra-content" style="display: none;">
+                    <strong>Age:</strong> ${pet.age || "N/A"}<br>
+                    <strong>Gender:</strong> ${pet.gender || "N/A"}<br>
+                    <strong>Description:</strong> ${pet.description || "No description available."}<br>
+                    <strong>Size:</strong> ${pet.size || "N/A"}<br>
+                    <strong>Species:</strong> ${pet.species || "N/A"}<br>
+                    <strong>Shelter:</strong> ${pet.shelterId || "N/A"}
+                </div>
+                <button class="read-more-btn" onclick="toggleCardExpansion(event)">Read More</button>
             </div>
         `;
 
         petGrid.appendChild(petCard);
     });
+}
+
+// Toggle expansion for individual cards
+function toggleCardExpansion(event) {
+    const cardContent = event.target.closest('.card').querySelector('.extra-content');
+    const card = event.target.closest('.card');
+
+    if (cardContent.style.display === 'none') {
+        cardContent.style.display = 'block';
+        card.classList.add('expanded');
+        event.target.textContent = 'Read Less';
+    } else {
+        cardContent.style.display = 'none';
+        card.classList.remove('expanded');
+        event.target.textContent = 'Read More';
+    }
+}
+
+// Toggle expansion for individual cards
+function toggleCardExpansion(event) {
+    const cardContent = event.target.closest('.card').querySelector('.extra-content');
+    const shortDescription = event.target.closest('.card').querySelector('.short-description');
+    const card = event.target.closest('.card');
+
+    if (cardContent.style.display === 'none') {
+        cardContent.style.display = 'block';
+        shortDescription.style.display = 'none';
+        card.classList.add('expanded');
+        event.target.textContent = 'Read Less';
+    } else {
+        cardContent.style.display = 'none';
+        shortDescription.style.display = 'block';
+        card.classList.remove('expanded');
+        event.target.textContent = 'Read More';
+    }
 }
 
 
