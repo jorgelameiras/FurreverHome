@@ -1,0 +1,38 @@
+x<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Favorites</title>
+    <link rel="stylesheet" href="./src/adopt.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container flex">
+            <h2 class="logo"><a href="./index.html">Furrever Home</a></h2>
+            <ul class="nav-links flex">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./adopt.html">Adopt</a></li>
+                <li><a href="./index.html#contact">Contact Us</a></li>
+                <li><a href="./shelters.html">Shelters</a></li>
+            </ul>
+            <!-- <a href="./login.html" class="login-btn flex">Login</a> -->
+        </nav>
+    </header>
+
+    <main class="container mt-5 pt-5">
+        <section id="favorites-section">
+            <h2 style="font-family: 'Croissant One', serif; font-size: 1.5rem; font-weight: 400; color: #333; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); text-align: center; margin-top: 20px;">
+                Your Favorite Pets
+            </h2>
+            <div id="favorites-grid" class="pet-grid row justify-content-center"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Furrever Home. All rights reserved.</p>
+    </footer>
+    <script src="./favorites.js"></script>
+</body>
+</html>

@@ -64,7 +64,7 @@
 83C:\Capstone\FurreverHome\src\node_modules\caniuse-lite\data\features\will-change.js133764267209548205 0
 82C:\Capstone\FurreverHome\src\node_modules\caniuse-lite\data\features\es6-module.js133764267201763880 0
 38C:\Capstone\FurreverHome\src\dog2.jpeg133752181564051288 0
-44C:\Capstone\FurreverHome\src\background3.png133759973541051983 0
+44C:\Capstone\FurreverHome\src\newbg.jpg133759973541051983 0
 71C:\Capstone\FurreverHome\src\node_modules\caniuse-lite\data\features.js133764267201963361 0
 44C:\Capstone\FurreverHome\src\background4.jpg133752181563871764 0
 49C:\Capstone\FurreverHome\src\node_modules\@parcel133764289746347635 1

@@ -30,50 +30,68 @@ async function testPrismaQuery() {
 testPrismaQuery();
 
 
-// Route to fetch pets
+// Route to fetch pets 
 app.get('/pets', async (req, res) => {
   try {
-    const { type, age, gender, size } = req.query;
+      const { type, age, gender, size } = req.query;
 
-    // Initialize filters object
-    const filters = {};
-
-    // Add type-specific filtering
-    if (type === 'dog') {
-      filters.species = {
-        notIn: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
+      // Map type to species
+      const speciesMap = {
+          cat: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
+          dog: ['LABRADOR RETR', 'PIT BULL', 'AM PIT BULL TER', 'BOXER'],
       };
-    } else if (type === 'cat') {
-      filters.species = {
-        in: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
-      };
-    }
 
-    // Add additional filters if provided
-    if (age) {
-      filters.age = parseInt(age, 10);
-    }
-    if (gender) {
-      filters.gender = gender;
-    }
-    if (size) {
-      filters.size = size.toUpperCase();
-    }
+      const filters = {};
+      if (type && speciesMap[type]) {
+          filters.species = { in: speciesMap[type] };
+      }
+      if (age) filters.age = parseInt(age, 10);
+      if (gender) filters.gender = gender;
+      if (size) filters.size = size.toUpperCase();
 
-    console.log('Filters applied:', filters); // Debugging log
+      // Fetch all pets matching the filters
+      const pets = await prisma.Pet.findMany({ where: filters });
 
-    // Query database
-    const pets = await prisma.Pet.findMany({
-      where: filters,
-    });
-
-    res.json(pets);
+      res.json({ pets });
   } catch (error) {
-    console.error('Error fetching pets:', error); // Log the error
-    res.status(500).json({ error: 'Error fetching pets.' });
+      console.error("Error fetching pets:", error);
+      res.status(500).json({ error: "Failed to fetch pets" });
   }
 });
 
+
+// Favorites
+app.get('/favorites', async (req, res) => {
+  try {
+      // Mock user for testing
+      const user = 'mockUserId';
+      if (!user) {
+          return res.status(401).json({ error: 'User not authenticated' });
+      }
+
+      const favorites = [
+          {
+              id: 1,
+              name: 'Pet 1',
+              age: '2 years',
+              gender: 'Male',
+              imageLink: 'https://via.placeholder.com/300?text=Pet+1',
+          },
+          {
+              id: 2,
+              name: 'Pet 2',
+              age: '3 years',
+              gender: 'Female',
+              imageLink: 'https://via.placeholder.com/300?text=Pet+2',
+          },
+      ];
+
+      res.json(favorites); // Replace this with actual database logic
+  } catch (error) {
+      console.error('Error fetching favorites:', error);
+      res.status(500).json({ error: 'Error fetching favorites.' });
+  }
+});
 
 
 // Start the server
