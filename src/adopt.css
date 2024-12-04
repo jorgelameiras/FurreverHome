@@ -1,12 +1,11 @@
-*{
-    margin: 0;
+* {
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Croissant One', serif; 
     font-weight: 400;
     --color-primary: #6495ED;
     --color-primary-dark: #073180;
@@ -17,14 +16,13 @@ body {
 
     margin: 0;
     min-height: 100vh;
-    
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
     font-size: 18px;
     padding-top: 65px;
-    background-image: url(./Adopt-background.png);
+    background-image: url(./images/Adopt-background.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -36,27 +34,26 @@ main {
     padding: 0;
     margin: 0;
     flex: 1;
-    
 }
 
-/* Index styling*/
-header{
+/* Header */
+header {
     position: fixed;
-    top:0;
-    left:0;
-    width:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: white;
     z-index: 100;
-    cursor: url('./paw.png'), pointer !important;
+    cursor: url('./images/paw.png'), pointer !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-.container{
+.container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -67,7 +64,6 @@ header{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    
 }
 
 .logo a {
@@ -75,7 +71,7 @@ header{
     font-weight: 400;
     color: black;
     text-decoration: none;
-    font-size: 36px; 
+    font-size: 36px;
 }
 
 .login-btn {
@@ -86,9 +82,7 @@ header{
     font-size: 18px;
     text-decoration: none;
     transition: 0.3s ease;
-   
 }
-
 
 .login-btn:hover {
     background-color: white;
@@ -108,8 +102,7 @@ header{
     margin-right: auto;
 }
 
-.nav-links a{
-    
+.nav-links a {
     font-family: serif;
     color: black;
     background: white;
@@ -119,7 +112,6 @@ header{
 }
 
 .navbar a {
-    
     padding: 10px 0;
     display: inline-block;
     color: black;
@@ -129,84 +121,300 @@ header{
 }
 
 .navbar nav:hover, a:hover {
-    cursor: url('./paw.png'), pointer !important;
+    cursor: url('./images/paw.png'), pointer !important;
     color: #000;
 }
 
 /* Pet Grid */
 .pet-grid {
     display: grid;
-    gap: 0;
-    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 15px;
+    justify-content: center;
 }
+
 
 /* Card Styles */
 .card {
+    position: relative;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s ease-in-out;
-    max-width: 250px;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.card.expanded {
+    width: 400px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .card-content {
-    padding: 20px;
+    padding: 15px;
 }
 
 .card-title {
     font-family: 'Croissant One', serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #333;
     margin: 10px 0;
 }
 
-.card-text {
-    font-family: serif;
-    font-size: 1rem;
-    color: #555;
+.card-content strong {
+    display: block;
+    margin: 5px 0;
 }
 
-.card-footer {
-    padding: 10px;
-    background-color: #f9f9f9;
+.read-more-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6495ED;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.card-footer a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #6495ED;
-    transition: color 0.2s;
+.read-more-btn:hover {
+    background-color: #4169E1;
 }
 
-.card-footer a:hover {
-    color: #4169E1;
-}
 
 @media (max-width: 900px) {
-  .pet-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .pet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
-  .pet-grid {
-    grid-template-columns: 1fr;
-  }
+    .pet-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
+/* Filter Section */
+.filter-container-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 50px;
+    border-radius: 10px;
+    width: 180px;
+    position: fixed;
+    top: 120px;
+    z-index: 100;
+    left: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Croissant One', serif;
+}
+
+/* Make filter horizontal for smaller screens */
+@media (max-width: 1400px) {
+    .filter-container-vertical {
+        position: sticky;
+        width: 100%;
+        top: auto;
+        left: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    #apply-filters {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Filter Groups */
+.filter-group label {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Croissant One', serif;
+}
+
+.filter-group select {
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100%;
+    color: #333;
+}
+
+/* Apply Filters Button */
+#apply-filters {
+    align-self: stretch;
+    background-color: #6495ED;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: url('./images/paw.png'), pointer !important; 
+    font-family: 'Croissant One', serif; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+#apply-filters:hover {
+    background-color: #FFA07A; 
+    transform: scale(1.05); 
+    color: #fff;
+}
+
+/* Animal Favorites */
+.favorites-link {
+    display: flex;
+    align-items: center;
+    color: black;
+    margin-right: 20px;
+}
+
+.favorites-link:hover .favorites-icon {
+    filter: brightness(0.7);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.favorites-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Croissant One', serif; 
+    font-weight: bold;
+}
+
+.favorites-icon {
+    width: 35px;
+    height: 28px;
+    margin-top: 1px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    padding: 0%;
+}
+ 
+/* pagination */
+.pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-controls button {
+    padding: 8px 15px;
+    font-family: 'Croissant One', serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6495ED;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+    background-color: #4169E1;
+}
+
+.pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+/* Ensure the page takes up the full viewport height */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Allow the main content to grow and take up remaining space */
+main {
+    flex: 1;
+}
+
+
+/* spacing */
+.space {
+    padding: 10px;
+}
+
+/* heart */
+.heart-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.heart-button:hover {
+    transform: scale(1.1);
+}
+
+.heart-icon {
+    fill: #ccc;
+    width: 100%;
+    height: 100%;
+    transition: fill 0.3s ease;
+}
+
+.heart-button.active .heart-icon {
+    fill: #e74c3c;
+    animation: heartbeat 0.6s ease-in-out;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s ease-in-out;
+    max-width: 300px;
+    margin: 15px;
+}
+
