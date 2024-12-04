@@ -76,8 +76,10 @@ document.getElementById("apply-filters").addEventListener("click", () => {
         size: size !== "all" ? size : "",
     };
 
+    console.log("Filters being applied:", filters); // Debug log
     fetchPets(filters);
 });
+
 
 // Favorites functionality
 function toggleFavorite(petId) {

@@ -35,7 +35,6 @@ app.get('/pets', async (req, res) => {
   try {
       const { type, age, gender, size } = req.query;
 
-      // Map type to species
       const speciesMap = {
           cat: ['DOMESTIC SH', 'DOMESTIC MH', 'DOMESTIC LH', 'SIAMESE', 'BENGAL'],
           dog: ['LABRADOR RETR', 'PIT BULL', 'AM PIT BULL TER', 'BOXER'],
@@ -45,11 +44,21 @@ app.get('/pets', async (req, res) => {
       if (type && speciesMap[type]) {
           filters.species = { in: speciesMap[type] };
       }
-      if (age) filters.age = parseInt(age, 10);
+      if (age) {
+          if (age === "4+") {
+              filters.age = { gte: 4 };
+          } else {
+              filters.age = parseInt(age, 10);
+          }
+      }
       if (gender) filters.gender = gender;
       if (size) filters.size = size.toUpperCase();
 
-      // Fetch all pets matching the filters
+      // Ensure `imageLink` is neither null nor an empty array
+      filters.imageLink = {
+          isEmpty: false, // Exclude pets with an empty array
+      };
+
       const pets = await prisma.Pet.findMany({ where: filters });
 
       res.json({ pets });
@@ -58,6 +67,8 @@ app.get('/pets', async (req, res) => {
       res.status(500).json({ error: "Failed to fetch pets" });
   }
 });
+
+
 
 
 // Favorites
@@ -92,8 +103,6 @@ app.get('/favorites', async (req, res) => {
       res.status(500).json({ error: 'Error fetching favorites.' });
   }
 });
-
-
 // Start the server
 
 const PORT = 5500;
