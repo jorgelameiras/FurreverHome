@@ -33,8 +33,6 @@ function createPasswordRequirements() {
     return requirements;
 }
 
-//setFormMessage(loginForm, "success", "You're logged in!");
-
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
@@ -91,14 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, password: password }),
-            // credentials: 'include'
         });
     
-        console.log('Response:', response);
         const result = await response.json();
-        console.log("LOGIN.JS RESULT:", result.message);
 
-    
         if (response.ok) {
             setFormMessage(loginForm, "success", result.message);
             setTimeout(location.href = "./adopt.html", 100000);
@@ -113,8 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const email = document.getElementById('regEmail').value;
         const password = document.getElementById('regPassword').value;
-        console.log("LOGIN.JS EMAIL:", email);
-        console.log("LOGIN.JS PW:", password);
     
         const response = await fetch('http://localhost:5500/register', {
             method: 'POST',
@@ -123,8 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     
         const result = await response.json();
-        console.log("LOGIN.JS RESULT:", result);
-        // registerMessage.textContent = result.message;
     
         if (response.ok) {
             setFormMessage(createAccountForm, "success", result.message);
@@ -204,77 +194,4 @@ document.addEventListener("DOMContentLoaded", () => {
     
 });
 
-// const createAccount = document.getElementById('createAccount'); // createAccount id= createAccount
-// const loginForm = document.getElementById('login');
-// // const registerMessage = document.getElementById('registerMessage');
-// // const loginMessage = document.getElementById('loginMessage');
-// // const protectedMessage = document.getElementById('protectedMessage');
-
-// let token = null; // Store JWT or session identifier (if needed for server)
-
-// // Handle registration
-// createAccount.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-
-//     const email = document.getElementById('regUsername').value;
-//     const password = document.getElementById('regPassword').value;
-
-//     const response = await fetch('http://localhost:5500/register', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ username, password }),
-//     });
-
-//     const result = await response.json();
-//     registerMessage.textContent = result.message;
-
-//     if (response.ok) {
-//         registerMessage.style.color = 'green';
-//     } else {
-//         registerMessage.style.color = 'red';
-//     }
-// });
-
-// // Handle login
-// loginForm.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-
-//     const username = document.getElementById('loginUsername').value;
-//     const password = document.getElementById('loginPassword').value;
-
-//     const response = await fetch('/login', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ username, password }),
-//     });
-
-//     const result = await response.json();
-//     loginMessage.textContent = result.message;
-
-//     if (response.ok) {
-//         loginMessage.style.color = 'green';
-//         token = result.token; // Save token (for JWT-based auth)
-//     } else {
-//         loginMessage.style.color = 'red';
-//     }
-// });
-
-// // Handle access to protected route
-// accessProtectedButton.addEventListener('click', async () => {
-//     const response = await fetch('/protected', {
-//         method: 'GET',
-//         headers: {
-//             'Authorization': token ? `Bearer ${token}` : '', // For JWT-based
-//         },
-//         credentials: 'include', // Include cookies (for session-based auth)
-//     });
-
-//     const result = await response.json();
-//     if (response.ok) {
-//         protectedMessage.style.color = 'green';
-//         protectedMessage.textContent = result.message;
-//     } else {
-//         protectedMessage.style.color = 'red';
-//         protectedMessage.textContent = result.message;
-//     }
 // });
