@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
             state: "FL",
             zip: "32771",
             phone: "(123) 456-7890",
-            rating: 4.5
+            rating: 4.5,
+            link: "https://www.petrescuebyjudy.com/"
         },
         {
             name: "Second Chance Shelter",
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
             state: "FL",
             zip: "32801",
             phone: "(987) 654-3210",
-            rating: 4.8
+            rating: 4.8,
+            link: "https://www.secondchanceanimalrescueandsanctuary.org/"
         },
         {
             name: "Orange County Shelter",
@@ -28,14 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
             state: "FL",
             zip: "32839",
             phone: "(321) 555-1234",
-            rating: 4.2
+            rating: 4.2,
+            link: "https://www.ocnetpets.com/Adopt/AnimalsinShelter.aspx"
         }
     ];
+    ;
 
     function displayShelters(sheltersToDisplay) {
         const shelterGrid = document.querySelector('.gallery-grid');
         shelterGrid.innerHTML = '';
-
+    
         sheltersToDisplay.forEach(shelter => {
             const shelterCard = document.createElement('div');
             shelterCard.className = 'shelter-card';
@@ -45,12 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3>${shelter.name}</h3>
                     <p>${shelter.address}</p>
                     <p>${shelter.phone}</p>
-                    <a href="#" class="learn-more">Learn More</a>
+                    <a href="${shelter.link}" class="learn-more" target="_blank" rel="noopener noreferrer">Learn More</a>
                 </div>
             `;
             shelterGrid.appendChild(shelterCard);
         });
     }
+    
 
     function searchShelters() {
         const searchInput = document.getElementById('searchInput');
